@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello</title>
+    </head>
+    <body>
+        <h1>Hello, {{name}}!</h1>
+        <p>Today's technology headlines are... </p>
+        <table style="width:50%">
+            <tr>
+                <th>Title</th>
+                <th>Thumbnail</th>
+            </tr>
+            {% for s in stories %}
+                <tr>
+                    <td><a href="{{ s['url']}}">{{s['title']}}</a></td>
+                    <td>
+                    <img
+                        src="{{s['multimedia'][2]['url']}}"
+                        height=120/>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
